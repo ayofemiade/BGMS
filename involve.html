@@ -606,8 +606,21 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .nav-menu {
-                display: none;
-            }
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        background: rgba(75, 0, 130, 0.95);
+        position: absolute;
+        top: 70px; /* height of header */
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
 
             .mobile-menu {
                 display: block;
@@ -686,7 +699,7 @@
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="our-work.html">Our Work</a></li>
+                    <li><a href="work.html">Our Work</a></li>
                     <li><a href="#" class="active">Get Involved</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -1008,11 +1021,12 @@
             }
         }
 
-        // Mobile menu toggle (placeholder for future implementation)
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            // Mobile menu functionality would be implemented here
-            console.log('Mobile menu clicked');
-        });
+        const mobileMenu = document.querySelector('.mobile-menu');
+const navMenu = document.querySelector('.nav-menu');
+
+mobileMenu.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
 
         // Add stagger animation to option cards
         function staggerAnimation() {

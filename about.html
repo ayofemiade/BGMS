@@ -458,8 +458,21 @@
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .nav-menu {
-                display: none;
-            }
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        background: rgba(75, 0, 130, 0.95);
+        position: absolute;
+        top: 70px; /* height of header */
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
 
             .mobile-menu {
                 display: block;
@@ -776,6 +789,12 @@
     </footer>
 
     <script>
+        const mobileMenu = document.querySelector('.mobile-menu');
+const navMenu = document.querySelector('.nav-menu');
+
+mobileMenu.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
