@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Involved - Badeku Global Missionary Society</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --royal-purple: #4B0082;
+            --bright-gold: #FFD700;
+            --deep-red: #B22222;
+            --sky-blue: #1E90FF;
+            --white: #FFFFFF;
+            --charcoal-gray: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal-gray);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(75, 0, 130, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(75, 0, 130, 0.98);
+            box-shadow: 0 4px 20px rgba(75, 0, 130, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--bright-gold);
+        }
+
+        .mobile-menu {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.85), rgba(255, 215, 0, 0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="%23ffffff" stroke-width="1" opacity="0.1"/></pattern></defs><rect fill="%23f8f9ff" width="1200" height="600"/><rect fill="url(%23grid)" width="1200" height="600"/><g transform="translate(200,100)"><circle fill="%234B0082" cx="50" cy="50" r="40" opacity="0.6"/><text x="30" y="55" fill="%23ffffff" font-size="12" font-weight="bold">YOU</text></g><g transform="translate(400,80)"><rect fill="%23FFD700" width="80" height="80" rx="10" opacity="0.7"/><text x="25" y="45" fill="%23333" font-size="10" font-weight="bold">SPONSOR</text></g><g transform="translate(600,120)"><rect fill="%231E90FF" width="100" height="60" rx="8" opacity="0.6"/><text x="20" y="35" fill="%23ffffff" font-size="10" font-weight="bold">VOLUNTEER</text></g><g transform="translate(850,90)"><circle fill="%23B22222" cx="45" cy="45" r="35" opacity="0.6"/><text x="25" y="50" fill="%23ffffff" font-size="10" font-weight="bold">PRAY</text></g><path d="M250,150 Q400,100 600,160 Q750,120 900,140" stroke="%23FFD700" stroke-width="4" fill="none" opacity="0.8"/><path d="M250,150 Q350,200 500,180 Q650,160 850,180" stroke="%234B0082" stroke-width="3" fill="none" opacity="0.6"/></svg>') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--bright-gold);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .hero-verse {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-ref {
+            font-size: 1rem;
+            color: var(--bright-gold);
+            font-weight: 600;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--royal-purple);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--bright-gold), var(--royal-purple));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--charcoal-gray);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        /* Involvement Options Section */
+        .options-section {
+            background: var(--white);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .option-card {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,215,0,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .option-card:hover::before {
+            opacity: 1;
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .option-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(75, 0, 130, 0.2);
+        }
+
+        .option-card.sponsor {
+            border-color: var(--bright-gold);
+        }
+
+        .option-card.volunteer {
+            border-color: var(--sky-blue);
+        }
+
+        .option-card.pray {
+            border-color: var(--deep-red);
+        }
+
+        .option-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .option-card.sponsor .option-icon {
+            background: linear-gradient(135deg, var(--bright-gold), #FFA500);
+        }
+
+        .option-card.volunteer .option-icon {
+            background: linear-gradient(135deg, var(--sky-blue), #00BFFF);
+        }
+
+        .option-card.pray .option-icon {
+            background: linear-gradient(135deg, var(--deep-red), #DC143C);
+        }
+
+        .option-card:hover .option-icon {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .option-icon i {
+            font-size: 2.5rem;
+            color: var(--white);
+        }
+
+        .option-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+
+        .option-card.sponsor h3 {
+            color: var(--bright-gold);
+        }
+
+        .option-card.volunteer h3 {
+            color: var(--sky-blue);
+        }
+
+        .option-card.pray h3 {
+            color: var(--deep-red);
+        }
+
+        .option-card p {
+            color: var(--charcoal-gray);
+            opacity: 0.8;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .option-benefits {
+            list-style: none;
+            text-align: left;
+            margin: 1.5rem 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .option-benefits li {
+            padding: 0.5rem 0;
+            color: var(--charcoal-gray);
+            opacity: 0.8;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .option-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .option-card.sponsor .option-benefits li::before {
+            color: var(--bright-gold);
+        }
+
+        .option-card.volunteer .option-benefits li::before {
+            color: var(--sky-blue);
+        }
+
+        .option-card.pray .option-benefits li::before {
+            color: var(--deep-red);
+        }
+
+        /* Button Styles */
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            min-width: 200px;
+        }
+
+        .btn-gold {
+            background: linear-gradient(45deg, var(--bright-gold), #FFA500);
+            color: var(--charcoal-gray);
+        }
+
+        .btn-blue {
+            background: linear-gradient(45deg, var(--sky-blue), #00BFFF);
+            color: var(--white);
+        }
+
+        .btn-red {
+            background: linear-gradient(45deg, var(--deep-red), #DC143C);
+            color: var(--white);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        /* Donation Section */
+        .donation-section {
+            background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
+        }
+
+        .donation-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .donation-intro {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            color: var(--charcoal-gray);
+        }
+
+        .scripture-highlight {
+            background: var(--white);
+            border-left: 5px solid var(--bright-gold);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .scripture-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--royal-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .scripture-ref {
+            color: var(--bright-gold);
+            font-weight: 600;
+        }
+
+        .donation-amounts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .amount-btn {
+            padding: 1rem;
+            background: var(--white);
+            border: 2px solid var(--royal-purple);
+            border-radius: 15px;
+            color: var(--royal-purple);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .amount-btn:hover, .amount-btn.selected {
+            background: var(--royal-purple);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .custom-amount {
+            margin-top: 1rem;
+        }
+
+        .custom-amount input {
+            padding: 1rem;
+            border: 2px solid var(--royal-purple);
+            border-radius: 10px;
+            font-size: 1.1rem;
+            width: 200px;
+            text-align: center;
+        }
+
+        .donation-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .method-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .method-icon {
+            font-size: 2rem;
+            color: var(--royal-purple);
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Info Section */
+        .contact-info-section {
+            background: var(--royal-purple);
+            color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--bright-gold);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h4 {
+            color: var(--bright-gold);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--bright-gold);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--charcoal-gray);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--bright-gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: var(--bright-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--bright-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 1rem;
+            margin-top: 2rem;
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .options-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .option-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .donation-amounts {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .donation-methods {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .donation-amounts {
+                grid-template-columns: 1fr;
+            }
+
+            .custom-amount input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BGMS</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="our-work.html">Our Work</a></li>
+                    <li><a href="#" class="active">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Get Involved</h1>
+            <p class="hero-subtitle">Be part of God's Kingdom advancement today</p>
+            <p class="hero-verse">"No man goes to the field at his own cost"</p>
+            <p class="hero-ref">1 Corinthians 9:7</p>
+        </div>
+    </section>
+
+    <!-- Involvement Options Section -->
+    <section class="options-section section">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="section-title">Ways to Make an Impact</h2>
+                <p class="section-subtitle">
+                    Choose how you want to partner with us in advancing God's Kingdom on Earth
+                </p>
+                
+                <div class="options-grid">
+                    <!-- Sponsor a Mission -->
+                    <div class="option-card sponsor fade-in">
+                        <div class="option-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>Sponsor a Mission</h3>
+                        <p>Fund missionaries in rural communities and provide comprehensive support for Kingdom advancement in unreached areas.</p>
+                        
+                        <ul class="option-benefits">
+                            <li>Support missionary families with monthly stipends</li>
+                            <li>Fund transportation and ministry materials</li>
+                            <li>Provide healthcare and emergency support</li>
+                            <li>Receive regular updates and testimonies</li>
+                            <li>Visit sponsored mission fields</li>
+                        </ul>
+                        
+                        <a href="#sponsor-form" class="btn btn-gold">
+                            <i class="fas fa-heart"></i> Become a Sponsor
+                        </a>
+                    </div>
+                    
+                    <!-- Volunteer -->
+                    <div class="option-card volunteer fade-in">
+                        <div class="option-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Volunteer</h3>
+                        <p>Join field work or provide local support through your skills, time, and passion for missions.</p>
+                        
+                        <ul class="option-benefits">
+                            <li>Participate in rural evangelism trips</li>
+                            <li>Support with professional skills</li>
+                            <li>Help with logistics and administration</li>
+                            <li>Mentor young missionaries</li>
+                            <li>Organize fundraising events</li>
+                        </ul>
+                        
+                        <a href="#volunteer-form" class="btn btn-blue">
+                            <i class="fas fa-user-plus"></i> Join as Volunteer
+                        </a>
+                    </div>
+                    
+                    <!-- Pray with Us -->
+                    <div class="option-card pray fade-in">
+                        <div class="option-icon">
+                            <i class="fas fa-praying-hands"></i>
+                        </div>
+                        <h3>Pray with Us</h3>
+                        <p>Intercede for ongoing missions, unreached communities, and the spiritual breakthrough needed in rural areas.</p>
+                        
+                        <ul class="option-benefits">
+                            <li>Receive monthly prayer requests</li>
+                            <li>Join weekly online prayer meetings</li>
+                            <li>Pray for specific villages and families</li>
+                            <li>Support missionaries through prayer</li>
+                            <li>Participate in prayer walks</li>
+                        </ul>
+                        
+                        <a href="#prayer-form" class="btn btn-red">
+                            <i class="fas fa-pray"></i> Join Prayer Team
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="donation-section section">
+        <div class="container">
+            <div class="donation-content fade-in">
+                <h2 class="section-title">Support Our Mission</h2>
+                <p class="section-subtitle">
+                    Your generous giving enables us to reach more communities with the Gospel
+                </p>
+                
+                <p class="donation-intro">
+                    Every contribution, whether large or small, makes a significant difference in advancing God's Kingdom in rural communities across Africa.
+                </p>
+                
+                <div class="scripture-highlight">
+                    <p class="scripture-text">"Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap."</p>
+                    <p class="scripture-ref">Luke 6:38</p>
+                </div>
+                
+                <h3 style="color: var(--royal-purple); margin-bottom: 1.5rem;">Choose an Amount</h3>
+                <div class="donation-amounts">
+                    <button class="amount-btn" data-amount="5000">₦5,000</button>
+                    <button class="amount-btn" data-amount="10000">₦10,000</button>
+                    <button class="amount-btn" data-amount="25000">₦25,000</button>
+                    <button class="amount-btn" data-amount="50000">₦50,000</button>
+                    <button class="amount-btn" data-amount="100000">₦100,000</button>
+                    <button class="amount-btn" data-amount="custom">Custom</button>
+                </div>
+                
+                <div class="custom-amount" id="customAmount" style="display: none;">
+                    <input type="number" placeholder="Enter amount in Naira" id="customAmountInput">
+                </div>
+                
+                <h3 style="color: var(--royal-purple); margin: 2rem 0 1rem;">Payment Methods</h3>
+                <div class="donation-methods">
+                    <div class="method-card">
+                        <i class="fas fa-credit-card method-icon"></i>
+                        <h4>Bank Transfer</h4>
+                        <p>Direct bank transfer to BGMS account</p>
+                    </div>
+                    <div class="method-card">
+                        <i class="fas fa-mobile-alt method-icon"></i>
+                        <h4>Mobile Money</h4>
+                        <p>Pay with your mobile money account</p>
+                    </div>
+                    <div class="method-card">
+                        <i class="fab fa-paypal method-icon"></i>
+                        <h4>Online Payment</h4>
+                        <p>Secure online payment via Paystack</p>
+                    </div>
+                </div>
+                
+                <button class="btn btn-gold" style="font-size: 1.2rem; padding: 1.2rem 3rem;" onclick="processDonation()">
+                    <i class="fas fa-heart"></i> Donate Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section section">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="section-title" style="color: var(--white);">Get in Touch</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">
+                    Ready to get involved? Contact us for more information
+                </p>
+                
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <h4>Phone</h4>
+                        <p>
+                            <a href="tel:+2348037203758">08037203758</a><br>
+                            <a href="tel:+2348039575840">08039575840</a><br>
+                            <a href="tel:+2348024273272">08024273272</a>
+                        </p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <h4>Email</h4>
+                        <p>
+                            <a href="mailto:badekuglobal@gmail.com">badekuglobal@gmail.com</a><br>
+                            <a href="mailto:badekuglobal@yahoo.com">badekuglobal@yahoo.com</a>
+                        </p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <h4>Address</h4>
+                        <p>
+                            1, Gunidodo Road, Ilu-peju Area<br>
+                            Badeku, Ona Ara LGA<br>
+                            Ibadan, Oyo State, Nigeria
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BGMS</h3>
+                    <p>"Advancing God's Kingdom on Earth"</p>
+                    <p>Bringing the Gospel to rural and unreached communities across Africa.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>1, Gunidodo Road, Ilu-peju Area</p>
+                    <p>Badeku, Ona Ara LGA</p>
+                    <p>Ibadan, Oyo State, Nigeria</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Get in Touch</h3>
+                    <p>Phone: 08037203758</p>
+                    <p>Email: badekuglobal@gmail.com</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Badeku Global Missionary Society. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Donation amount selection
+        document.querySelectorAll('.amount-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove selected class from all buttons
+                document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+                
+                // Add selected class to clicked button
+                this.classList.add('selected');
+                
+                // Show/hide custom amount input
+                const customAmount = document.getElementById('customAmount');
+                if (this.dataset.amount === 'custom') {
+                    customAmount.style.display = 'block';
+                    document.getElementById('customAmountInput').focus();
+                } else {
+                    customAmount.style.display = 'none';
+                }
+            });
+        });
+
+        // Process donation function (placeholder for payment integration)
+        function processDonation() {
+            const selectedBtn = document.querySelector('.amount-btn.selected');
+            let amount = 0;
+            
+            if (selectedBtn) {
+                if (selectedBtn.dataset.amount === 'custom') {
+                    amount = document.getElementById('customAmountInput').value;
+                } else {
+                    amount = selectedBtn.dataset.amount;
+                }
+            }
+            
+            if (amount && amount > 0) {
+                // Here you would integrate with Paystack or Flutterwave
+                alert(`Thank you for your donation of ₦${amount.toLocaleString()}!\n\nRedirecting to secure payment portal...`);
+                // Redirect to payment gateway
+                // window.location.href = `payment-portal.html?amount=${amount}`;
+            } else {
+                alert('Please select or enter a donation amount.');
+            }
+        }
+
+        // Mobile menu toggle (placeholder for future implementation)
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            // Mobile menu functionality would be implemented here
+            console.log('Mobile menu clicked');
+        });
+
+        // Add stagger animation to option cards
+        function staggerAnimation() {
+            const optionCards = document.querySelectorAll('.option-card');
+            const methodCards = document.querySelectorAll('.method-card');
+            
+            optionCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+            });
+            
+            methodCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        }
+
+        // Initialize stagger animations
+        staggerAnimation();
+
+        // Form handling functions (placeholders for actual form integration)
+        window.addEventListener('load', function() {
+            // Add event listeners for form buttons
+            document.querySelector('a[href="#sponsor-form"]').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSponsorForm();
+            });
+            
+            document.querySelector('a[href="#volunteer-form"]').addEventListener('click', function(e) {
+                e.preventDefault();
+                showVolunteerForm();
+            });
+            
+            document.querySelector('a[href="#prayer-form"]').addEventListener('click', function(e) {
+                e.preventDefault();
+                showPrayerForm();
+            });
+        });
+
+        function showSponsorForm() {
+            alert('Sponsor Registration Form\n\nThank you for your interest in sponsoring a mission!\n\nPlease contact us at:\nPhone: 08037203758\nEmail: badekuglobal@gmail.com\n\nOr visit our office for detailed sponsorship packages.');
+        }
+
+        function showVolunteerForm() {
+            alert('Volunteer Application\n\nThank you for wanting to volunteer!\n\nPlease contact us with:\n• Your skills and availability\n• Preferred type of volunteer work\n• Any relevant experience\n\nContact:\nPhone: 08037203758\nEmail: badekuglobal@gmail.com');
+        }
+
+        function showPrayerForm() {
+            alert('Prayer Team Registration\n\nJoin our prayer warriors!\n\nTo join our prayer team:\n• Call: 08037203758\n• Email: badekuglobal@gmail.com\n• WhatsApp for prayer group invite\n\nWe meet weekly for online prayer sessions.');
+        }
+
+        // Enhanced hover effects
+        document.querySelectorAll('.option-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add pulse animation to donation button
+        setInterval(function() {
+            const donateBtn = document.querySelector('button[onclick="processDonation()"]');
+            if (donateBtn && !document.querySelector('.amount-btn.selected')) {
+                donateBtn.style.animation = 'pulse 0.5s ease-in-out';
+                setTimeout(() => {
+                    donateBtn.style.animation = '';
+                }, 500);
+            }
+        }, 5000);
+
+        // Add CSS for pulse animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

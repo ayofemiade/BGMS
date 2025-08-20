@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work - Badeku Global Missionary Society</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --royal-purple: #4B0082;
+            --bright-gold: #FFD700;
+            --deep-red: #B22222;
+            --sky-blue: #1E90FF;
+            --white: #FFFFFF;
+            --charcoal-gray: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal-gray);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(75, 0, 130, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(75, 0, 130, 0.98);
+            box-shadow: 0 4px 20px rgba(75, 0, 130, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--bright-gold);
+        }
+
+        .mobile-menu {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.85), rgba(30, 144, 255, 0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="%23ffffff" stroke-width="1" opacity="0.1"/></pattern></defs><rect fill="%23f0f8ff" width="1200" height="600"/><rect fill="url(%23grid)" width="1200" height="600"/><g transform="translate(150,80)"><rect fill="%23e0e0e0" width="200" height="150" rx="8"/><rect fill="%23d0d0d0" width="180" height="15" rx="3" x="10" y="15"/><rect fill="%23d0d0d0" width="150" height="12" rx="2" x="10" y="35"/><circle fill="%23c0c0c0" cx="30" cy="100" r="20"/><text x="55" y="105" fill="%23999" font-size="10">Rural Village</text></g><g transform="translate(450,120)"><rect fill="%23e0e0e0" width="180" height="120" rx="8"/><rect fill="%23d0d0d0" width="160" height="12" rx="3" x="10" y="15"/><rect fill="%23d0d0d0" width="130" height="10" rx="2" x="10" y="35"/><circle fill="%23c0c0c0" cx="25" cy="80" r="15"/><text x="45" y="85" fill="%23999" font-size="8">Mission Field</text></g><g transform="translate(750,70)"><rect fill="%23e0e0e0" width="220" height="140" rx="8"/><rect fill="%23d0d0d0" width="200" height="12" rx="3" x="10" y="15"/><rect fill="%23d0d0d0" width="170" height="10" rx="2" x="10" y="35"/><circle fill="%23c0c0c0" cx="35" cy="90" r="18"/><text x="60" y="95" fill="%23999" font-size="9">Community</text></g><path d="M250,150 Q400,100 600,180 Q750,120 950,160" stroke="%234B0082" stroke-width="3" fill="none" opacity="0.4"/><circle fill="%23FFD700" cx="350" cy="125" r="6" opacity="0.7"/><circle fill="%231E90FF" cx="650" cy="150" r="8" opacity="0.6"/><circle fill="%23B22222" cx="850" cy="135" r="5" opacity="0.5"/></svg>') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--bright-gold);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--royal-purple);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--bright-gold), var(--royal-purple));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--charcoal-gray);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        /* Challenges Section */
+        .challenges-section {
+            background: var(--white);
+        }
+
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .challenge-card {
+            background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(178, 34, 34, 0.1);
+        }
+
+        .challenge-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--deep-red);
+            box-shadow: 0 15px 35px rgba(178, 34, 34, 0.2);
+        }
+
+        .challenge-icon {
+            font-size: 3rem;
+            color: var(--deep-red);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .challenge-card h3 {
+            font-size: 1.4rem;
+            color: var(--deep-red);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .challenge-card p {
+            color: var(--charcoal-gray);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Proposal Section */
+        .proposal-section {
+            background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
+        }
+
+        .proposal-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .proposal-intro {
+            font-size: 1.3rem;
+            color: var(--charcoal-gray);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .synergy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .synergy-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
+        }
+
+        .synergy-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--bright-gold);
+            box-shadow: 0 20px 40px rgba(75, 0, 130, 0.15);
+        }
+
+        .synergy-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--sky-blue), #00BFFF);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .synergy-card:hover .synergy-icon {
+            background: linear-gradient(135deg, var(--bright-gold), #FFA500);
+            transform: scale(1.1);
+        }
+
+        .synergy-icon i {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .synergy-card h3 {
+            font-size: 1.3rem;
+            color: var(--royal-purple);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .synergy-card p {
+            color: var(--charcoal-gray);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            background: linear-gradient(135deg, var(--royal-purple), #6A0DAD);
+            color: var(--white);
+        }
+
+        .impact-content {
+            text-align: center;
+        }
+
+        .impact-section .section-title {
+            color: var(--white);
+        }
+
+        .impact-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .impact-stat {
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--bright-gold);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .impact-process {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--bright-gold);
+            color: var(--charcoal-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .process-step h4 {
+            color: var(--bright-gold);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .process-step p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--white);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-text {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: var(--charcoal-gray);
+            line-height: 1.6;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin: 0 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--bright-gold), #FFA500);
+            color: var(--charcoal-gray);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(45deg, var(--royal-purple), #6A0DAD);
+            color: var(--white);
+            border: 2px solid var(--bright-gold);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #FFA500, var(--bright-gold));
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(45deg, #6A0DAD, var(--royal-purple));
+            box-shadow: 0 10px 25px rgba(75, 0, 130, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--charcoal-gray);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--bright-gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: var(--bright-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--bright-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 1rem;
+            margin-top: 2rem;
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .challenges-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .challenge-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .synergy-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .impact-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .impact-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                display: block;
+                margin: 0.5rem auto;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BGMS</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#" class="active">Our Work</a></li>
+                    <li><a href="involve.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our Work</h1>
+            <p class="hero-subtitle">Transforming Communities Through Mission-Market Synergy</p>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section class="challenges-section section">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="section-title">The Challenges We Face</h2>
+                <p class="section-subtitle">
+                    Understanding the complex realities of rural mission work in Africa
+                </p>
+                
+                <div class="challenges-grid">
+                    <div class="challenge-card fade-in">
+                        <i class="fas fa-moon challenge-icon"></i>
+                        <h3>Spiritual Darkness</h3>
+                        <p>Villages trapped in ignorance, witchcraft, and traditional practices that keep communities bound. Many have never heard the Gospel or experienced God's transforming power.</p>
+                    </div>
+                    
+                    <div class="challenge-card fade-in">
+                        <i class="fas fa-hand-holding-heart challenge-icon"></i>
+                        <h3>Socio-Economic Struggles</h3>
+                        <p>Extreme poverty, lack of healthcare, limited education opportunities, and basic infrastructure challenges make daily survival a constant battle for rural communities.</p>
+                    </div>
+                    
+                    <div class="challenge-card fade-in">
+                        <i class="fas fa-user-injured challenge-icon"></i>
+                        <h3>Overwhelmed Missionaries</h3>
+                        <p>Dedicated missionaries struggle with inadequate support, financial constraints, and the enormous task of reaching vast rural areas with limited resources and manpower.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proposal Section -->
+    <section class="proposal-section section">
+        <div class="container">
+            <div class="proposal-content fade-in">
+                <h2 class="section-title">Our Proposal: Mission-Market Synergy</h2>
+                <p class="section-subtitle">
+                    Building bridges between marketplace believers and rural missionaries
+                </p>
+                
+                <p class="proposal-intro">
+                    We believe the answer lies in creating a powerful synergy between committed believers in the marketplace and dedicated missionaries in rural fields. By connecting resources, expertise, and passion, we can multiply our Kingdom impact exponentially.
+                </p>
+                
+                <div class="synergy-grid">
+                    <div class="synergy-card fade-in">
+                        <div class="synergy-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Connect Believers & Professionals</h3>
+                        <p>Link successful marketplace believers with rural missionaries, creating partnerships that combine spiritual calling with practical resources.</p>
+                    </div>
+                    
+                    <div class="synergy-card fade-in">
+                        <div class="synergy-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>Comprehensive Sponsor Support</h3>
+                        <p>Sponsors provide not just funds, but also resources, mentorship, skills training, and ongoing encouragement to missionary families.</p>
+                    </div>
+                    
+                    <div class="synergy-card fade-in">
+                        <div class="synergy-icon">
+                            <i class="fas fa-cross"></i>
+                        </div>
+                        <h3>Focused Evangelism</h3>
+                        <p>With sponsor support handling practical needs, missionaries can focus entirely on their calling: sharing the Gospel and discipling new believers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section section">
+        <div class="container">
+            <div class="impact-content fade-in">
+                <h2 class="section-title">Workability & Impact</h2>
+                <p class="section-subtitle">
+                    Proven results from four decades of rural mission experience
+                </p>
+                
+                <div class="impact-stats">
+                    <div class="impact-stat fade-in">
+                        <span class="impact-number">40+</span>
+                        <span class="impact-label">Years of Ministry</span>
+                    </div>
+                    <div class="impact-stat fade-in">
+                        <span class="impact-number">100+</span>
+                        <span class="impact-label">Villages Reached</span>
+                    </div>
+                    <div class="impact-stat fade-in">
+                        <span class="impact-number">10+</span>
+                        <span class="impact-label">Active Co-laborers</span>
+                    </div>
+                    <div class="impact-stat fade-in">
+                        <span class="impact-number">1000s</span>
+                        <span class="impact-label">Lives Transformed</span>
+                    </div>
+                </div>
+                
+                <div class="impact-process fade-in">
+                    <h3 style="color: var(--bright-gold); margin-bottom: 2rem;">Our Proven Process</h3>
+                    
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h4>Identify Rural Fields</h4>
+                            <p>Survey and map unreached communities, assessing spiritual and physical needs.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h4>Train Young Missionaries</h4>
+                            <p>Equip dedicated youths with biblical foundation and practical ministry skills.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h4>Connect Sponsors</h4>
+                            <p>Match trained missionaries with committed marketplace believers as sponsors.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <h4>Provide Comprehensive Support</h4>
+                            <p>Ensure missionaries have financial, material, and spiritual support for effective ministry.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2 class="section-title">Join the Mission-Market Synergy</h2>
+                <p class="cta-text">
+                    Be part of God's Kingdom advancement today. Whether you're called to sponsor, volunteer, or support in other ways, there's a place for you in this vital ministry.
+                </p>
+                
+                <a href="get-involved.html" class="btn btn-primary">
+                    <i class="fas fa-hands-helping"></i> Get Involved Today
+                </a>
+                <a href="contact.html" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BGMS</h3>
+                    <p>"Advancing God's Kingdom on Earth"</p>
+                    <p>Bringing the Gospel to rural and unreached communities across Africa.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>1, Gunidodo Road, Ilu-peju Area</p>
+                    <p>Badeku, Ona Ara LGA</p>
+                    <p>Ibadan, Oyo State, Nigeria</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Get in Touch</h3>
+                    <p>Phone: 08037203758</p>
+                    <p>Email: badekuglobal@gmail.com</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Badeku Global Missionary Society. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Counter animation for impact stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.impact-number');
+            
+            counters.forEach(counter => {
+                const target = counter.innerText.includes('+') ? 
+                    parseInt(counter.innerText.replace('+', '')) : 
+                    counter.innerText.includes('s') ?
+                    1000 : parseInt(counter.innerText);
+                
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        if (counter.innerText.includes('s')) {
+                            counter.innerText = Math.floor(current) + 's';
+                        } else {
+                            counter.innerText = Math.floor(current) + (counter.innerText.includes('+') ? '+' : '');
+                        }
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        if (counter.innerText.includes('s')) {
+                            counter.innerText = target + 's';
+                        } else {
+                            counter.innerText = target + (target >= 40 || target >= 100 || target >= 10 ? '+' : '');
+                        }
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Trigger counter animation when impact section is visible
+        const impactSection = document.querySelector('.impact-stats');
+        if (impactSection) {
+            const impactObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        impactObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            impactObserver.observe(impactSection);
+        }
+
+        // Mobile menu toggle (placeholder for future implementation)
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            // Mobile menu functionality would be implemented here
+            console.log('Mobile menu clicked');
+        });
+
+        // Add stagger animation to cards
+        function staggerAnimation() {
+            const challengeCards = document.querySelectorAll('.challenge-card');
+            const synergyCards = document.querySelectorAll('.synergy-card');
+            const processSteps = document.querySelectorAll('.process-step');
+            
+            challengeCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+            });
+            
+            synergyCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+            });
+            
+            processSteps.forEach((step, index) => {
+                step.style.animationDelay = `${index * 0.15}s`;
+            });
+        }
+
+        // Initialize stagger animations
+        staggerAnimation();
+    </script>
+</body>
+</html>
